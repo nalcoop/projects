@@ -1,0 +1,372 @@
+/* General Styles */
+
+body {
+  background-color: #cacaca;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+
+main {
+  margin:120px;
+  padding:0;
+  box-sizing: border-box;
+}
+
+/* Text Styles */
+body,
+p,
+div,
+li,
+a {
+  font-family: "Merriweather", serif;
+  font-style: normal;
+}
+
+h1,
+h2,
+.favorite-button,
+.details,#navbar a {
+  font-family: "Raleway", sans-serif;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+h3,h4 {
+  font-size: 1.5em;
+  text-align: left;
+}
+
+p {
+  font-size: 1.25em;
+  margin-bottom: 20px;
+  line-height: 1.75;
+  text-align: left;
+}
+
+a {
+  text-decoration: none;
+}
+
+header a {
+  color: black;
+  box-shadow: inset 0 0 0 0 #9B9AA9;
+  margin: 0 -.25rem;
+  padding: 0 .25rem;
+  transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+}
+/* code for the navigation dropdown & hamburger menu */
+/* fix navigation for mobile, ensure the hamburger menu shows up and that the drop down is working properly */
+
+
+.notransition {
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -o-transition: none !important;
+  transition: none !important;
+}
+
+#navbar {  
+  background-color: #acacb1;
+  position: fixed;
+  height:100px;
+  justify-content: space-between;
+  width:100%;
+  display:flex;
+  top:0;
+  left:0;
+  padding: 0 20px;
+  z-index: 999;
+}
+
+#navbar ul {
+  display: flex;
+}
+
+#navbar nav>ul {
+  align-items: center;
+  margin: auto;
+  gap: 25px;
+  height: 100px;
+  background-color: #acacb1;
+}
+
+#navbar li {
+  list-style-type: none;
+}
+
+#navbar li:first-child {
+  margin-left: auto;
+}
+
+#navbar li:last-child {
+  margin-right: 50px;
+}
+
+#navbar ul ul {
+  margin-left: 15px;
+}
+
+.dropdown {
+  position: absolute;
+  top: 100%;
+  overflow: hidden;
+  width: 100vw;
+  height: 0;
+  transition: height 0.3s ease-in-out;
+  left:0;
+}
+
+
+
+.dropdown>ul {
+  display: none;
+  position: absolute;
+  width: 100vw;
+  background-color: #acacb1;
+  flex-direction: row;
+  gap: 25px;
+  padding: 25px 0;
+  left:0;
+}
+
+/*  Cards */
+
+.property-name, address, a{
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.card,
+.specialityCard {
+  display: flex;
+  flex-direction: column;
+  background-color: #F9EAE1;
+  padding: 20px;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.4s ease-in-out;
+  margin: 20px;
+  border-radius: 10px;
+  box-sizing: content-box;
+}
+.card > .slideshow,
+.specialityCard >.slideshow {
+  align-items: center;
+  box-sizing: content-box;
+}
+
+
+
+
+
+#speciality-list, #museum-list{
+  margin-top: 1rem;
+  gap:10px;
+}
+
+/* Slideshow Container */
+/* make sure that all images are fitting into the container height and width */
+/* fix images in figma if need be */
+.slideshow {
+  position: relative;
+  max-width: fit-content;
+  max-height: fit-content;
+  object-fit: contain;
+  margin: auto;
+  overflow: hidden;
+}
+
+/* Slides */
+.slide {
+  display: none;
+  max-width: 75%;
+  max-height: 75%;
+  margin: auto;
+  align-items: center;
+  transition: opacity 1.5s ease-in-out;
+}
+
+.slide.active {
+  display: block;
+  opacity: 1;
+}
+
+/* Fade effect */
+.fade {
+  animation: fadeEffect 1.5s;
+}
+
+@keyframes fadeEffect {
+  from {
+    opacity: 0.4;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* Navigation Buttons */
+.prev,
+.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #F9EAE1;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+/* Favorite & Learn More Button */
+.favorite-button, .details {
+  background-color: #1B2F33;
+  color:#F9EAE1;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.favorite-button:hover, .details:hover {
+  background-color: #223b41;
+}
+
+/* footer styles  */
+footer {
+  background-color:#0B0033;
+  color:#F9EAE1;
+  display: flex;
+  flex-direction: row-reverse;
+  padding: 100px;
+  width: 100vw;
+}
+
+footer nav {
+  margin-right: auto;
+}
+
+footer nav ul {
+  /*All lists*/
+  list-style: none;
+}
+
+footer nav ul li a {
+  font-family: 'Raleway', sans-serif;
+  color: #F9EAE1;
+  font-size: 1.25rem;
+}
+
+footer nav>ul {
+  /*Top level list*/
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+}
+
+footer nav ul ul {
+  /*All but top level list*/
+  position: relative;
+  left: 15px;
+}
+
+/*RWD/Media Queries*/
+/* On smaller screens, decrease text size */
+
+@media screen and (max-width:999px) {
+  #hamburger {
+    display: inline-block;
+    background-color: transparent;
+  }
+
+  #navbar nav>ul {
+    flex-direction: column;
+    align-items: baseline;
+    display:flex;
+    height: 50vh;
+    top: 100px;
+    transform: translateX(100%);
+    transition: transform 0.6s ease;
+    background-color: #acacb1;
+  }
+
+  #navbar li:first-child {
+    margin-right: 0;
+  }
+
+  #navbar nav>ul.display {
+    transform: translateX(0);
+  }
+
+  .dropdown {
+    display: none;
+    width: 400px;
+    position: static;
+  }
+
+  .dropdown.display {
+    display: block;
+  }
+
+  .dropdown ul {
+    flex-direction: column;
+    align-items: baseline;
+    width: 100%;
+    position: static;
+  }
+}
+
+@media screen and (min-width:1000px) {
+  .dropdown:hover>li>a {
+    display: flex;
+    flex-direction: row;
+  }
+  #hamburger {
+    background: transparent;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    right: 100px;
+    transform: translateY(-50%);
+    display: none;
+  }
+  #navbar nav a, .favorite-button, .details{
+    font-size:1.25em;
+  }
+  p {
+    margin-bottom: 20px;
+    line-height: 1.75;
+    text-align: left;
+  }
+}
+
+@media screen and (max-width: 1560px) and (max-width:800px){
+  footer {
+    flex-direction: column-reverse;
+    gap: 50px;
+    padding: 50px;
+  }
+  footer nav>ul {
+    /*Top level list*/
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+}
